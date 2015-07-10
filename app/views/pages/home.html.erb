@@ -1,0 +1,20 @@
+
+  <title>Sandbox</title>
+
+
+<% if user_signed_in? %>
+  <h1 class="page-header">Welcome, <%= current_user.username %></h1>
+
+  <% if current_user.pro? %>
+  You mad, pro?
+  <% end %>
+
+  <p>
+    Membership: <%= current_user.membership %>
+  </p>
+<% else %>
+  <p class="lead">
+    You should log in
+    <%= link_to('Login', login_path, class: 'btn btn-success')%>
+  </p>
+  <% end %>

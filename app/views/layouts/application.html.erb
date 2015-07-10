@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sandbox</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <div class="container">
+<body> 
+        <%= image_tag "stuff/brown-sandbox2.jpg" %>
+    <div class="row">
+      <div class="col-sm-12">
+        <header>
+          <%= render ('shared/top_nav') %>
+        </header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <section>
+
+        <%= yield %>
+    
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <hr />
+         <footer>
+          <div id="fixedfooter">
+            copyright &copy; <%= Time.now.year %>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    
+    </body>
+  </div>
+</html>

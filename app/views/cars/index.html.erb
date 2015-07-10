@@ -1,0 +1,19 @@
+  <%= link_to('Add new car', new_car_path ) %>
+
+    <div class="">
+
+    <% @cars.each do |car| %>
+    <p>
+      <h1><%= link_to(car.make, car_path(car.id)) %></h1>
+      <span><%= car.year %></span>
+      <span><%= car.make %></span>
+      <span><%= car.vehicle_model %></span>
+      <span><%= car.body %></span>
+      <span><%= car.engine %></span>
+     <p>
+      <%= link_to('edit this car', edit_car_path(car.id))%>
+      <%= link_to('delete this car', car_path(car.id), method: :delete) %> 
+    <% end %>
+  </div>
+
+  

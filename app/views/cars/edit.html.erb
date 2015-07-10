@@ -1,0 +1,11 @@
+<%= form_for(@car) do |f| %>
+
+  <p>Year: <%= f.select(:year, 1949..2015)%></p>
+  <p>Make: <%= f.text_field(:make)%></p>
+  <p>Model: <%= f.text_field(:vehicle_model)%></p>
+  <p>Body: <%= f.text_field(:body)%></p>
+  <p>Engine: <%= f.text_field(:engine)%></p>
+
+ <p><h1><%= f.submit('Save') %></h1></p>
+
+<% end %>

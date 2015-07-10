@@ -1,0 +1,41 @@
+<div>
+  <%= link_to('create', new_meal_path, class: "glyphicon glyphicon-plus") %>
+  </a>
+
+</div>
+
+<h1 class="page-header"> All meals page!</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Restaurant</th>
+        <th>Prep Time</th>
+        <th>&nbsp;</th>
+
+      </tr>
+    </thead> 
+    <tbody>
+      <% @meals.each do |meal| %>
+        <tr>
+         <td><%= link_to(meal.name, meal_path(meal.id)) %></td>
+         <td><%= meal.calories %></td>
+         <td><%= meal.prep_time %></td>
+         <td><%= meal.restaurant %></td>
+         <td>
+          
+          <a href="<%= edit_meal_path(meal.id) %>" class="btn btn-warning">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <%= link_to('delete', meal_path(meal.id),method: :delete, class: "btn btn-danger") %>
+
+         </td>
+
+
+
+        </tr>
+      <% end %>
+     </tbody>
+   </table>

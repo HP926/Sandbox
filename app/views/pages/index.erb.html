@@ -1,0 +1,11 @@
+meals page!
+
+
+I have <%= @meals.count %> meals!
+
+  <div class="">
+
+    <% @meals.each do |meal| %>
+      <p><%= meal.name %></p>
+    <% end %>
+  </div>
